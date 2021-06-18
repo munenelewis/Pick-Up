@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 
 import CovidMessage from '../../component/CovidMessage'
+import DestinationSearch from '../DestinationSearch'
 import HomeMap from '../../component/map'
 import HomeSearch from '../../component/HomeSearch'
 import React from 'react'
@@ -8,9 +9,10 @@ import React from 'react'
 const HomeScreen = () => {
     return (
         <View >
-            <HomeMap />
-            <CovidMessage />
-            <HomeSearch />
+            {/* <HomeMap /> */}
+            {/* <CovidMessage /> */}
+            {/* <HomeSearch /> */}
+            <DestinationSearch />
         </View>
     )
 }

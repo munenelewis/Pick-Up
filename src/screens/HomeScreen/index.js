@@ -16,8 +16,8 @@ const HomeScreen = () => {
 
       <CovidMessage />
       <HomeSearch /> */}
-      {/* <DestinationSearch /> */}
-      <SearchResults />
+      <DestinationSearch />
+      {/* <SearchResults /> */}
     </View>
   );
 };

@@ -27,14 +27,23 @@ const HomeMap = () => {
         latitudeDelta: 0.0222,
         longitudeDelta: 0.0121,
       }}>
-      {/* {cars.map((item) => (
+      {cars.map(item => (
         <Marker
           key={item.id}
           coordinate={{latitude: item.latitude, longitude: item.longitude}}>
-          <Image style={styles.marker} source={getImage(item.type)} />
+          <Image
+            style={{
+              ...styles.marker,
+              transform: [
+                {
+                  rotate: `${item.heading}deg`,
+                },
+              ],
+            }}
+            source={getImage(item.type)}
+          />
         </Marker>
-      ))} */}
-
+      ))}
     </MapView>
   );
 };

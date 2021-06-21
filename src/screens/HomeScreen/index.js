@@ -5,19 +5,17 @@ import DestinationSearch from '../DestinationSearch';
 import HomeMap from '../../component/map';
 import HomeSearch from '../../component/HomeSearch';
 import React from 'react';
-import SearchResults from '../../component/SearchResults';
+import SearchResults from '../../screens/SearchResults';
 
 const HomeScreen = () => {
   return (
     <View>
-      {/* <View style={{height: Dimensions.get('window').height - 500}}>
+      <View style={{height: Dimensions.get('window').height - 500}}>
         <HomeMap />
       </View>
-
       <CovidMessage />
-      <HomeSearch /> */}
-      <DestinationSearch />
-      {/* <SearchResults /> */}
+      <HomeSearch />
+
     </View>
   );
 };

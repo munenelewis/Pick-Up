@@ -11,7 +11,7 @@ const index = () => {
   return (
     <View>
       {typesData.map((type, index) => (
-        <UberRow type={type} />
+        <UberRow type={type}  key={index}/>
       ))}
 
       <Pressable onPress={confirm} style={styles.uberCorn}>

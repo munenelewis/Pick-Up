@@ -1,28 +1,33 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
 const HomeSearch = () => {
+  const navigation = useNavigation()
+  const goToSearch = () => {
+    navigation.navigate("DestinationSearch")
+  };
   return (
     <View>
       {/* input boxes */}
-      <View style={styles.inputBox}>
+      <Pressable onPress={goToSearch} style={styles.inputBox}>
         <Text style={styles.InputText}> Where To ?</Text>
         <View style={styles.timeContainer}>
           <AntDesign name={'clockcircle'} size={16} />
           <Text>Now</Text>
           <MaterialIcons name={'keyboard-arrow-down'} size={16} />
         </View>
-      </View>
+      </Pressable>
 
       {/* previous destination */}
 
       <View style={styles.row}>
         <View style={styles.IconContainer}>
-          <AntDesign name={'clockcircle'} size={16} color={'#fff'}/>
+          <AntDesign name={'clockcircle'} size={16} color={'#fff'} />
         </View>
         <Text style={styles.destination}> Nakuru </Text>
       </View>
@@ -65,8 +70,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 20,
-    borderBottomWidth:1,
-    borderColor:'#dbdbdb'
+    borderBottomWidth: 1,
+    borderColor: '#dbdbdb',
   },
   IconContainer: {
     padding: 10,
@@ -83,14 +88,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 20,
-    borderBottomWidth:1,
-    borderColor:'#dbdbdb'
+    borderBottomWidth: 1,
+    borderColor: '#dbdbdb',
   },
   destinationIconContainer: {
     padding: 10,
     borderRadius: 35,
     backgroundColor: '#2b80ff',
-    color:'#fff'
+    color: '#fff',
   },
   destination_destination: {
     marginLeft: 10,

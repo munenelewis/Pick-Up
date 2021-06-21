@@ -5,7 +5,8 @@ import MapViewDirections from 'react-native-maps-directions';
 import React from 'react';
 import cars from '../../assests/data/cars';
 
-const RouteMap = () => {
+const RouteMap = (props) => {
+
   const getImage = type => {
     const base = '../../assests/images/';
     if (type == 'UberXL') {
@@ -19,22 +20,27 @@ const RouteMap = () => {
     }
   };
   const origin = {
-    latitude: 28.456312,
-    longitude: -16.252929,
+    latitude: props.destination.lat,
+    longitude: props.destination.lng,
   };
 
   const destination = {
-    latitude: 28.456208,
-    longitude: -16.259098,
+    latitude: props.origin.lat,
+    longitude: props.origin.lng,
   };
+
+  console.log('====================================');
+  console.log(destination);
+  console.log('====================================');
   const GOOGLE_MAPS_APIKEY = 'AIzaSyDb4GJhqNiMsQ5-G6PpYQS2syDFPMCVuMA'
   return (
     <MapView
+     showsUserLocation={true}
       style={styles.map}
       provider={PROVIDER_GOOGLE}
       initialRegion={{
-        latitude: 28.450627,
-        longitude: -16.263045,
+        latitude: origin.latitude,
+        longitude: origin.longitude,
         latitudeDelta: 0.0222,
         longitudeDelta: 0.0121,
       }}>

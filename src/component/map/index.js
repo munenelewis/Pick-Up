@@ -19,6 +19,7 @@ const HomeMap = () => {
   };
   return (
     <MapView
+    showsUserLocation={true}
       style={styles.map}
       provider={PROVIDER_GOOGLE}
       initialRegion={{
